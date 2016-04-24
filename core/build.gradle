@@ -1,0 +1,37 @@
+sourceSets {
+  main {
+    java {
+      //exclude '**/org/spongycastle/asn1/x509/**'
+      exclude '**/org/spongycastle/crypto/agreement/kdf/ECDHKEKGenerator.java'
+      exclude '**/org/spongycastle/crypto/util/DEROtherInfo.java'
+      exclude '**/org/spongycastle/crypto/tls/**'
+      exclude '**/org/spongycastle/tsp/**'
+      exclude '**/org/spongycastle/asn1/tsp/**'
+      exclude '**/org/spongycastle/asn1/dvcs/**'
+      exclude '**/org/spongycastle/asn1/icao/**'
+      exclude '**/org/spongycastle/asn1/ocsp/**'
+      exclude '**/org/spongycastle/asn1/ess/**'
+      exclude '**/org/spongycastle/asn1/esf/**'
+      exclude '**/org/spongycastle/asn1/isismtt/**'
+      exclude '**/org/spongycastle/asn1/smime/**'
+      exclude '**/org/spongycastle/asn1/mozilla/**'
+      exclude '**/org/spongycastle/asn1/cms/**'
+      exclude '**/org/spongycastle/asn1/crmf/**'
+      exclude '**/org/spongycastle/asn1/cmp/**'
+      exclude '**/org/spongycastle/pqc/**'
+      ["GOST3411", "Blake2", "Tiger", "Skein"].each {
+        exclude "**/org/spongycastle/crypto/digests/${it}Digest.java"
+      }
+      ["Blowfish", "Camellia", "CamelliaLight", "CamelliaWrap", "CAST5", "CAST6",
+            "GOST28147", "ElGamal", "Serpent", "Twofish", "Threefish", "Salsa20",
+            "XSalsa20", "CramerShoupCore", "ChaCha"].each {
+        exclude "**/org/spongycastle/crypto/engines/${it}Engine.java"
+      }
+      exclude '**/org/spongycastle/crypto/engines/CramerShoupCiphertext.java'
+      exclude '**/org/spongycastle/crypto/generators/SCrypt.java'
+      exclude '**/org/spongycastle/crypto/digests/SkeinEngine.java'
+      exclude '**/org/spongycastle/crypto/macs/SkeinMac.java'
+      exclude '**/org/spongycastle/crypto/params/SkeinParameters.java'
+    }
+  }
+}

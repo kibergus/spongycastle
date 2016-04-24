@@ -2,6 +2,44 @@ dependencies {
     compile project(':core')
 }
 
+sourceSets {
+  main {
+    java {
+      exclude '**/org/spongycastle/x509/**'
+      exclude '**/org/spongycastle/jce/X509*'
+      exclude '**/org/spongycastle/jce/PrincipalUtil.java'
+      exclude '**/org/spongycastle/jce/PKCS10CertificationRequest.java'
+      exclude '**/org/spongycastle/jce/provider/RFC3281CertPathUtilities.java'
+      exclude '**/org/spongycastle/jce/provider/RFC3280CertPathUtilities.java'
+      exclude '**/org/spongycastle/jce/provider/PKIXAttrCertPathBuilderSpi.java'
+      exclude '**/org/spongycastle/jce/provider/PKIXCertPathValidatorSpi.java'
+      exclude '**/org/spongycastle/jce/provider/PrincipalUtils.java'
+      exclude '**/org/spongycastle/jce/provider/CertPathValidatorUtilities.java'
+      exclude '**/org/spongycastle/jce/provider/PKIXAttrCertPathValidatorSpi.java'
+      exclude '**/org/spongycastle/jce/provider/X509*'
+      exclude '**/org/spongycastle/jce/provider/BrokenPBE.java'
+      exclude '**/org/spongycastle/jce/provider/BrokenJCEBlockCipher.java'
+      exclude '**/org/spongycastle/jce/provider/PKIXCertPathBuilderSpi.java'
+      exclude '**/org/spongycastle/jce/spec/GOST28147ParameterSpec.java'
+      exclude '**/org/spongycastle/jcajce/spec/GOST28147ParameterSpec.java'
+      exclude '**/org/spongycastle/jcajce/provider/keystore/pkcs12/PKCS12KeyStoreSpi.java'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/ElGamal.java'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/elgamal/**'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/ECGOST.java'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/ecgost/**'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/GOST.java'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/gost/**'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/X509.java'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/x509/**'
+      exclude '**/org/spongycastle/jcajce/provider/symmetric/**'
+      exclude '**/org/spongycastle/jcajce/provider/digest/**'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/DSTU4145.java'
+      exclude '**/org/spongycastle/jcajce/provider/asymmetric/dstu/**'
+      exclude '**/org/spongycastle/pqc/**'
+    }
+  }
+}
+
 cobertura {
    coverageDirs = [
        "${rootProject.projectDir}/core/build/classes/main",
