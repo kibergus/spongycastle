@@ -5,6 +5,7 @@ dependencies {
 sourceSets {
   main {
     java {
+      exclude '**/examples/**'      
       exclude '**/org/spongycastle/x509/**'
       exclude '**/org/spongycastle/jce/X509*'
       exclude '**/org/spongycastle/jce/PrincipalUtil.java'

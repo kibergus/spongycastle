@@ -1,7 +1,8 @@
 sourceSets {
   main {
     java {
-      //exclude '**/org/spongycastle/asn1/x509/**'
+      exclude '**/examples/**'
+      exclude '**/org/spongycastle/asn1/isismtt/x509/**'
       exclude '**/org/spongycastle/crypto/agreement/kdf/ECDHKEKGenerator.java'
       exclude '**/org/spongycastle/crypto/util/DEROtherInfo.java'
       exclude '**/org/spongycastle/crypto/tls/**'

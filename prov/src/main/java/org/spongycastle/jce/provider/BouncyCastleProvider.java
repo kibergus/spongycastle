@@ -55,6 +55,7 @@ public final class BouncyCastleProvider extends Provider
     /*
      * Configurable symmetric ciphers
      */
+    /*
     private static final String SYMMETRIC_PACKAGE = "org.spongycastle.jcajce.provider.symmetric.";
 
     private static final String[] SYMMETRIC_GENERIC =
@@ -74,7 +75,7 @@ public final class BouncyCastleProvider extends Provider
         "RC6", "Rijndael", "Salsa20", "SEED", "Serpent", "Shacal2", "Skipjack", "SM4", "TEA", "Twofish", "Threefish",
         "VMPC", "VMPCKSA3", "XTEA", "XSalsa20", "OpenSSLPBKDF"
     };
-
+    */
      /*
      * Configurable asymmetric ciphers
      */
@@ -89,7 +90,7 @@ public final class BouncyCastleProvider extends Provider
 
     private static final String[] ASYMMETRIC_CIPHERS =
     {
-        "DSA", "DH", "EC", "RSA", "GOST", "ECGOST", "ElGamal", "DSTU4145"
+        "DSA", "DH", "EC", "RSA", "DSTU4145"
     };
 
     /*
@@ -134,11 +135,11 @@ public final class BouncyCastleProvider extends Provider
     {
         loadAlgorithms(DIGEST_PACKAGE, DIGESTS);
 
-        loadAlgorithms(SYMMETRIC_PACKAGE, SYMMETRIC_GENERIC);
+        //loadAlgorithms(SYMMETRIC_PACKAGE, SYMMETRIC_GENERIC);
 
-        loadAlgorithms(SYMMETRIC_PACKAGE, SYMMETRIC_MACS);
+        //loadAlgorithms(SYMMETRIC_PACKAGE, SYMMETRIC_MACS);
 
-        loadAlgorithms(SYMMETRIC_PACKAGE, SYMMETRIC_CIPHERS);
+        //loadAlgorithms(SYMMETRIC_PACKAGE, SYMMETRIC_CIPHERS);
 
         loadAlgorithms(ASYMMETRIC_PACKAGE, ASYMMETRIC_GENERIC);
 
@@ -149,6 +150,7 @@ public final class BouncyCastleProvider extends Provider
         //
         // X509Store
         //
+        /*
         put("X509Store.CERTIFICATE/COLLECTION", "org.spongycastle.jce.provider.X509StoreCertCollection");
         put("X509Store.ATTRIBUTECERTIFICATE/COLLECTION", "org.spongycastle.jce.provider.X509StoreAttrCertCollection");
         put("X509Store.CRL/COLLECTION", "org.spongycastle.jce.provider.X509StoreCRLCollection");
@@ -158,15 +160,16 @@ public final class BouncyCastleProvider extends Provider
         put("X509Store.CRL/LDAP", "org.spongycastle.jce.provider.X509StoreLDAPCRLs");
         put("X509Store.ATTRIBUTECERTIFICATE/LDAP", "org.spongycastle.jce.provider.X509StoreLDAPAttrCerts");
         put("X509Store.CERTIFICATEPAIR/LDAP", "org.spongycastle.jce.provider.X509StoreLDAPCertPairs");
-        
+        */
         //
         // X509StreamParser
         //
+        /*
         put("X509StreamParser.CERTIFICATE", "org.spongycastle.jce.provider.X509CertParser");
         put("X509StreamParser.ATTRIBUTECERTIFICATE", "org.spongycastle.jce.provider.X509AttrCertParser");
         put("X509StreamParser.CRL", "org.spongycastle.jce.provider.X509CRLParser");
         put("X509StreamParser.CERTIFICATEPAIR", "org.spongycastle.jce.provider.X509CertPairParser");
-
+        */
         //
         // cipher engines
         //
@@ -178,16 +181,8 @@ public final class BouncyCastleProvider extends Provider
         put("Cipher.OLDPBEWITHSHAANDTWOFISH-CBC", "org.spongycastle.jce.provider.BrokenJCEBlockCipher$OldPBEWithSHAAndTwofish");
 
         // Certification Path API
-        put("CertPathValidator.RFC3281", "org.spongycastle.jce.provider.PKIXAttrCertPathValidatorSpi");
-        put("CertPathBuilder.RFC3281", "org.spongycastle.jce.provider.PKIXAttrCertPathBuilderSpi");
-        put("CertPathValidator.RFC3280", "org.spongycastle.jce.provider.PKIXCertPathValidatorSpi");
-        put("CertPathBuilder.RFC3280", "org.spongycastle.jce.provider.PKIXCertPathBuilderSpi");
-        put("CertPathValidator.PKIX", "org.spongycastle.jce.provider.PKIXCertPathValidatorSpi");
-        put("CertPathBuilder.PKIX", "org.spongycastle.jce.provider.PKIXCertPathBuilderSpi");
         put("CertStore.Collection", "org.spongycastle.jce.provider.CertStoreCollectionSpi");
-        put("CertStore.LDAP", "org.spongycastle.jce.provider.X509LDAPCertStoreSpi");
         put("CertStore.Multi", "org.spongycastle.jce.provider.MultiCertStoreSpi");
-        put("Alg.Alias.CertStore.X509LDAP", "LDAP");
     }
 
     private void loadAlgorithms(String packageName, String[] names)

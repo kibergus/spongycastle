@@ -10,3 +10,11 @@ cobertura {
        "${rootProject.projectDir}/pg/build/classes/main"
   ] 
 }
+
+sourceSets {
+  main {
+    java {
+      exclude '**/examples/**'
+    }
+  }
+}
